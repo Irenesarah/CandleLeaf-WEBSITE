@@ -1,6 +1,9 @@
 import React from "react";
-<<<<<<< HEAD
+
+import "./ProductCard.css"; 
+import {products} from "../Products/Products"; 
 import { Link } from "react-router-dom";
+
 import "./ProductCard.css"; 
 
 const ProductCard = ({ product }) => {
@@ -25,10 +28,7 @@ const ProductCard = ({ product }) => {
     </div>
 
   );
-=======
-import "./ProductCard.css"; 
-import {products} from "../Products/Products"; 
-import { Link } from "react-router-dom";
+
 
 const ProductCard = () => {
     return (
@@ -51,7 +51,7 @@ const ProductCard = () => {
             </div>
         </div>
     );
->>>>>>> 0e7bb88089f0bf9d8ff3a8f19e0a299c26853a97
+  }
 };
 
 export default ProductCard;
