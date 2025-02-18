@@ -1,0 +1,27 @@
+.popular-products{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px;
+
+}
+
+.popular-products-heading h1{
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    }
+
+.popular-products-heading h2{
+        font-size: 24px;
+        text-align: center;
+        font-weight: 100;
+        margin-top: 15px;
+
+        }
+.price {
+            font-size: 18px;
+            color: #26a65b;
+            font-weight:bold;
+        }
+          
+    
