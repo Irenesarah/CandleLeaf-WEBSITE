@@ -1,6 +1,7 @@
 import React from "react";
 import "./popularproducts.css"
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
 import {useState,useEffect} from "react";
 import axios from "axios";
 
@@ -22,6 +23,12 @@ const PopularProducts = () => {
       useEffect(() => { 
       fetchProducts();
     }, []);
+=======
+import {products} from "../Products/Products";
+
+
+const PopularProducts = () => {
+>>>>>>> 0e7bb88089f0bf9d8ff3a8f19e0a299c26853a97
     return (
         <div>
             <div className="popular-products-heading">
@@ -36,7 +43,11 @@ const PopularProducts = () => {
                         <div className="Product-card">
                             <img src={product.image} alt={product.name} />
                             <h1>{product.name}</h1>
+<<<<<<< HEAD
                             <p className="price">${product.price}</p>
+=======
+                            <p>${product.price}</p>
+>>>>>>> 0e7bb88089f0bf9d8ff3a8f19e0a299c26853a97
                         </div>
                     </Link>
                 ))}

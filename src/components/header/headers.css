@@ -17,7 +17,11 @@ body {
     padding:30px 170px;
     gap:30px;
     background-color: white;
+<<<<<<< HEAD
     border-bottom: 1px solid #c8c8c8;
+=======
+    border-bottom: 2px solid #c8c8c8;
+>>>>>>> 0e7bb88089f0bf9d8ff3a8f19e0a299c26853a97
     
     
 }

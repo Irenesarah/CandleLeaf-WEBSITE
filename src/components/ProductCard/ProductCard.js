@@ -1,4 +1,5 @@
 import React from "react";
+<<<<<<< HEAD
 import { Link } from "react-router-dom";
 import "./ProductCard.css"; 
 
@@ -24,6 +25,33 @@ const ProductCard = ({ product }) => {
     </div>
 
   );
+=======
+import "./ProductCard.css"; 
+import {products} from "../Products/Products"; 
+import { Link } from "react-router-dom";
+
+const ProductCard = () => {
+    return (
+        <div>
+            <header className="ProductHeading">
+                <h1>Products</h1>
+                <h2>Order it for yourself or your beloved ones</h2>
+            </header>
+
+            <div className="Products">
+                {products.map((product) => (
+                    <Link key={product.id} to={`/products/${product.id}`} className="product-link">
+                        <div className="Product-card">
+                            <img src={product.image} alt={product.name} />
+                            <h1>{product.name}</h1>
+                            <p>{product.price}</p>
+                        </div>
+                    </Link>
+                ))}
+            </div>
+        </div>
+    );
+>>>>>>> 0e7bb88089f0bf9d8ff3a8f19e0a299c26853a97
 };
 
 export default ProductCard;

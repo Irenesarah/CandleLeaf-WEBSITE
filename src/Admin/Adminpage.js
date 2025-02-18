@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import { Table, Button, Space, Modal, message } from "antd";
 import axios from "axios";
@@ -52,14 +53,35 @@ const AdminPage = () => {
   };
 
   // Define Table Columns
+=======
+
+import React from "react";
+import { Table, Button, Space } from "antd";
+import { products } from "../components/Products/Products";
+import "./Adminpage.css";
+
+const AdminPage = () => {
+  const handleEdit = (id) => {
+    console.log(`Editing product with ID: ${id}`);
+  };
+
+  const handleDelete = (id) => {
+    console.log(`Deleting product with ID: ${id}`);
+  };
+
+>>>>>>> 0e7bb88089f0bf9d8ff3a8f19e0a299c26853a97
   const columns = [
     {
       title: "Image",
       dataIndex: "image",
       key: "image",
+<<<<<<< HEAD
       render: (image) => (
         <img src={image} alt="product" style={{ width: 50, height: 50 }} />
       ),
+=======
+      render: (image) => <img src={image} alt="product" style={{ width: 50, height: 50 }} />,
+>>>>>>> 0e7bb88089f0bf9d8ff3a8f19e0a299c26853a97
     },
     { title: "Product Name", dataIndex: "name", key: "name" },
     { title: "Price", dataIndex: "price", key: "price" },
@@ -69,7 +91,11 @@ const AdminPage = () => {
       key: "action",
       render: (_, record) => (
         <Space>
+<<<<<<< HEAD
           <Button type="primary" onClick={() => handleEdit(record)}>
+=======
+          <Button type="primary" onClick={() => handleEdit(record.id)}>
+>>>>>>> 0e7bb88089f0bf9d8ff3a8f19e0a299c26853a97
             Edit
           </Button>
           <Button type="danger" onClick={() => handleDelete(record.id)}>
@@ -83,6 +109,7 @@ const AdminPage = () => {
   return (
     <div className="admin-container">
       <h1 className="admin-title">Admin Page</h1>
+<<<<<<< HEAD
       <Button type="primary" className="create-button" onClick={handleCreate}>
         Create Product
       </Button>
@@ -95,6 +122,10 @@ const AdminPage = () => {
         fetchProducts={fetchProducts}
         editingProduct={editingProduct}
       />
+=======
+      <button className="create-table">Create Product</button>
+      <Table columns={columns} dataSource={products} rowKey="id" />
+>>>>>>> 0e7bb88089f0bf9d8ff3a8f19e0a299c26853a97
     </div>
   );
 };
