@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Table, Button, Space, Modal, message } from "antd";
+import { Table, Button, Space, message } from "antd";
 import axios from "axios";
 import "./Adminpage.css";
 import {ProductForm} from "../Productform/Productform";
-import { useNavigate } from "react-router-dom";
 import {deleteProduct} from '../components/Apis/DeleteApi'
 
 
-const AdminPage = () => {
+export const AdminPage = () => {
   const [products, setProducts] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingProduct, setEditingProduct] = useState(null);
-  const navigate = useNavigate();
 
   const fetchProducts = async () => {
     try {
@@ -129,5 +127,5 @@ const handleDelete = async (productId, productName, setProduct) => {
   );
 };
 
-export default AdminPage;
+
 

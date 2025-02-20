@@ -1,7 +1,7 @@
 import React from "react";
 import "../naturecandle/naturecandle.css";
 
-const NatureCandle = () => {
+export const NatureCandle = () => {
     return (
         <div className="naturecandle">
             <div className = "overlay">
@@ -16,4 +16,3 @@ const NatureCandle = () => {
     
     );
 }
-export default NatureCandle;

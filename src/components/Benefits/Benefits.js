@@ -1,7 +1,7 @@
 import React from "react";
 import "../Benefits/Benefits.css";
 
-const Benefits = () => {
+export const Benefits = () => {
     return (
         <div className="benefits">
             
@@ -29,4 +29,3 @@ const Benefits = () => {
     );
 };
 
-export default Benefits;

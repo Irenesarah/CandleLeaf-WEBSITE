@@ -4,7 +4,7 @@ import {ProductCard} from "../ProductCard/ProductCard";
 import "./Productlist.css";
 
 
-const ProductList = () => {
+export const ProductList = () => {
   const [products, setProducts] = useState([]);
   console.log(ProductList)
   const fetchProducts = async () => {
@@ -39,4 +39,4 @@ const ProductList = () => {
   );
 };
 
-export default ProductList;
+

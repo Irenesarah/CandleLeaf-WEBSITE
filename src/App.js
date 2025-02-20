@@ -1,13 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navbar from "./components/header/header";
-import NatureCandle from "./components/naturecandle/naturecandle";
-import ProductCard from "./components/ProductCard/ProductCard";
-import Benefits from "./components/Benefits/Benefits";
-import Footer from "./components/footer/footer";
-import ProductDetails from "./components/ProductDetails/ProductDetail";
-import AdminPage from "./Admin/Adminpage";
-import ProductList from "./components/ProductList/Productlist";
+import {Navbar} from "./components/header/header";
+import {NatureCandle} from "./components/naturecandle/naturecandle";
+import {Benefits} from "./components/Benefits/Benefits";
+import {Footer} from "./components/footer/footer";
+import {ProductDetails} from "./components/ProductDetails/ProductDetail";
+import {AdminPage} from "./Admin/Adminpage";
+import {ProductList} from "./components/ProductList/Productlist";
 
 function App() {
   return (

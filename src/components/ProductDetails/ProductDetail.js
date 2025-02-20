@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import "./ProductDetail.css";
 
-const ProductDetails = () => {
+export const ProductDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1); 
@@ -31,6 +31,11 @@ const ProductDetails = () => {
   if (!product) {
     return <h2>Product not found</h2>;
   }
+
+  const handleAddToCart = () => {
+    alert(`Added  ${product.name} to cart!`);
+  };
+  
 
   return (
     <div className="product-details">
@@ -66,7 +71,7 @@ const ProductDetails = () => {
           </div>
         </div>
 
-        <button className="add-to-cart">🛒 Add to cart</button>
+        <button className="add-to-cart" onClick={handleAddToCart}>🛒 Add to cart </button>
 
         <div className="product-specs">
           <p><strong>Wax:</strong> Top-grade Soy wax that delivers a smokeless, consistent burn.</p>
@@ -80,4 +85,3 @@ const ProductDetails = () => {
   );
 };
 
-export default ProductDetails;
