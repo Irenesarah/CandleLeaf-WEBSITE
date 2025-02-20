@@ -7,7 +7,7 @@ const Benefits = () => {
             
             <div className="benefits-text">
                 <div className="benefits-heading">
-                    <h1>Clean and fragrant soy wax</h1>
+                    <p>Clean and fragrant soy wax</p>
                     <h2>Made for your home and for your wellness</h2>
                 </div>
 

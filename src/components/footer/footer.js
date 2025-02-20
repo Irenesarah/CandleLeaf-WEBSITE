@@ -6,7 +6,7 @@ const Footer = () => {
         <div className="footer">
         <div className="footer-details">
         <div className="footer-logo">
-        <img src="../images/footerlogo.png.png" alt="Logo" className="footer-logo"/>
+        <img className="image" src="../images/footerlogo.png.png" alt="Logo" />
         <p>Your natural candle made for your home and for your wellness.</p>
         </div>
         <div className="footer-links">
@@ -17,16 +17,17 @@ const Footer = () => {
                             <li>Most searched</li>
                             <li>Most selled</li>
                         </ul>
-                    </div>
-                    <div className="footer-column">
+                        </div>
+                        <div className="footer-column">
                         <h3>About</h3>
                         <ul>
                             <li>Help</li>
                             <li>Shipping</li>
                             <li>Affiliate</li>
                         </ul>
-                    </div>
-                    <div className="footer-column">
+                        </div>
+                        <div className="footer-column">
+
                         <h3>Info</h3>
                         <ul>
                             <li>Contact us</li>
@@ -34,8 +35,9 @@ const Footer = () => {
                             <li>Terms & Conditions</li>
                         </ul>
                     </div>
-        </div>
-        </div>
+                    </div>
+                    </div>
+
         </div>
         );
         };

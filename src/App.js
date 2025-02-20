@@ -5,7 +5,6 @@ import NatureCandle from "./components/naturecandle/naturecandle";
 import ProductCard from "./components/ProductCard/ProductCard";
 import Benefits from "./components/Benefits/Benefits";
 import Footer from "./components/footer/footer";
-import PopularProducts from "./components/popularproducts/popularproducts";
 import ProductDetails from "./components/ProductDetails/ProductDetail";
 import AdminPage from "./Admin/Adminpage";
 import ProductList from "./components/ProductList/Productlist";
@@ -17,7 +16,6 @@ function App() {
         {/* Admin Page Route */}
         <Route path="/admin" element={<AdminPage />} />
 
-        {/* Main Website Routes */}
         <Route
           path="/*"
           element={
@@ -31,11 +29,11 @@ function App() {
                       <NatureCandle />
                       <ProductList />
                       <Benefits />
-                      <PopularProducts />
                     </>
                   }
                 />
-                <Route path="/products/:id" element={<ProductDetails />} />
+                <Route path="/product/:id" element={<ProductDetails />} />
+
               </Routes>
               <Footer />
             </>

@@ -27,3 +27,13 @@
     display: flex;
     justify-self: center;
 }
+
+.Deletebutton{
+  background-color: #4CAF50;
+  color: white;
+
+}
+.Editbutton {
+  background-color: #4CAF50;
+  color: white;
+}

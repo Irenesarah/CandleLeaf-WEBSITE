@@ -9,9 +9,9 @@ const Navbar = () => {
             <img src = "/images/logo.png" alt="candleleaf logo"></img>
             </div>
         <ul class="nav-links">
-            <li><a href="#">Discovery <i class="down"></i></a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact us</a></li>
+            <li>Discovery <i class="down"></i></li>
+            <li>About</li>
+            <li>Contact us</li>
 
         </ul>
         <div class = "icons">

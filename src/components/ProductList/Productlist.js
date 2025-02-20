@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import ProductCard from "../ProductCard/ProductCard";
+import {ProductCard} from "../ProductCard/ProductCard";
 import "./Productlist.css";
 
 
@@ -24,7 +24,7 @@ const ProductList = () => {
     <div>
     <header className="ProductHeading">
     <h1>Products</h1>
-    <h2>Order it for yourself or your beloved ones</h2>
+    <p>Order it for yourself or your beloved ones</p>
     </header>
     <div className="product-list">
       {products.length > 0 ? (

@@ -6,13 +6,13 @@ import "./ProductDetail.css";
 const ProductDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const [quantity, setQuantity] = useState(1); 
 
-  // Fetch product details from backend
   useEffect(() => {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(`http://localhost:8000/product/${id}`);
-        setProduct(response.data); // API returns a single product object
+        setProduct(response.data);
       } catch (error) {
         console.error("Error fetching product:", error);
       }
@@ -20,7 +20,14 @@ const ProductDetails = () => {
     fetchProduct();
   }, [id]);
 
-  // Show loading or error message if product is not found
+  const increaseQuantity = () => {
+    setQuantity((prevQuantity) => prevQuantity + 1);
+  };
+
+  const decreaseQuantity = () => {
+    setQuantity((prevQuantity) => (prevQuantity > 1 ? prevQuantity - 1 : 1));
+  };
+
   if (!product) {
     return <h2>Product not found</h2>;
   }
@@ -28,7 +35,15 @@ const ProductDetails = () => {
   return (
     <div className="product-details">
       <div className="product-image">
-        <img src={product.image} alt={product.name} />
+        {product.image ? (
+          <img
+            className="product-detailed-image"
+            src={product.image}
+            alt={product.name}
+          />
+        ) : (
+          <div className="product-placeholder-box"></div>
+        )}
         <p>All hand-made with natural soy wax, Candleaf is made for your pleasure moments.</p>
         <p className="free-shipping">🚛 FREE SHIPPING</p>
       </div>
@@ -40,13 +55,18 @@ const ProductDetails = () => {
         <div className="quantity">
           <label>Quantity</label>
           <div className="quantity-box">
-            <button>-</button>
-            <input type="number" value="1" readOnly />
-            <button>+</button>
+            <button onClick={decreaseQuantity}>-</button>
+            <input
+              className="quantity-number"
+              type="number"
+              value={quantity}
+              readOnly
+            />
+            <button onClick={increaseQuantity}>+</button>
           </div>
         </div>
 
-        <button className="add-to-cart">🛒 + Add to cart</button>
+        <button className="add-to-cart">🛒 Add to cart</button>
 
         <div className="product-specs">
           <p><strong>Wax:</strong> Top-grade Soy wax that delivers a smokeless, consistent burn.</p>

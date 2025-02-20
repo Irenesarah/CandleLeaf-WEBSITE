@@ -17,6 +17,8 @@ body {
     padding:30px 170px;
     gap:30px;
     background-color: white;
+    height : 75px;
+    width: 100%;
 
     border-bottom: 1px solid #c8c8c8;
 

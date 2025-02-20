@@ -12,7 +12,7 @@ const PopularProducts = () => {
             try {
                 const response = await axios.get("http://localhost:8000/product");
                 console.log("Fetched Popular Products:", response.data);
-                setProducts(response.data.slice(0, 4)); // Get only the first 4 products
+                setProducts(response.data.slice(0, 4)); 
             } catch (error) {
                 console.error("Error fetching products:", error);
             }
@@ -29,7 +29,7 @@ const PopularProducts = () => {
 
             <div className="Products">
                 {products.map((product) => (
-                    <Link key={product.id} to={`/products/${product.id}`} className="product-link">
+                    <Link key={product.id} to={`/product/${product.id}`} className="product-link">
                         <div className="Product-card">
                             <img src={product.image} alt={product.name} />
                             <h1>{product.name}</h1>

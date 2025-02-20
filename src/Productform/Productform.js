@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Modal, Form, Input, Button, InputNumber, message } from "antd";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export const ProductForm = ({
   isModalOpen,
@@ -21,9 +22,11 @@ export const ProductForm = ({
       setProduct(editingProduct);
       form.setFieldsValue(editingProduct); 
     } else {
-        form.resetFields(); 
-      }
+    form.resetFields();
+    setProduct({ name: "", price: "", description: "", image: "" });
+    }
   }, [editingProduct, form]);
+     
 
   const handleFieldChange = (changedValues) => {
     setProduct({
@@ -32,25 +35,56 @@ export const ProductForm = ({
     });
   };
 
-  const handleSubmit = async (values) => {
-    const url = editingProduct
-      ? `http://localhost:8000/product/${editingProduct.id}`
-      : "http://localhost:8000/product"; 
-    const method = editingProduct ? "put" : "post"; 
-
-    try {
-      const response = await axios[method](url, values);
-      message.success(
-        editingProduct ? "Product updated successfully!" : "Product created successfully!"
-      );
-      fetchProducts(); 
-      setIsModalOpen(false); 
-    } catch (error) {
-      message.error("Error saving product");
-    }
-  };
-
+// const handleSubmit = async (values) => {
+//     try {
+//       if (editingProduct) {
+//         // Update Existing Product (PUT request)
+//         await axios.put(`http://localhost:8000/product/${editingProduct.id}`, values);
+//         alert("Product updated successfully!"); // Show success alert
+//       } else {
+//         // Create New Product (POST request)
+//         await axios.post("http://localhost:8000/product", values);
+//         alert("Product added successfully!"); // Show success alert
+//       }
   
+//       fetchProducts(); // Refresh product list immediately
+//       setIsModalOpen(false); //Close the modal after submission
+//     } catch (error) {
+//       console.error("Error saving product:", error);
+//       message.error("Failed to save product."); //Show error alert
+//     }
+//   };
+
+
+
+const navigate = useNavigate(); 
+
+const handleSubmit = async (values) => {
+  try {
+    if (editingProduct) {
+      await axios.put(`http://localhost:8000/product/${editingProduct.id}`, values);
+
+      
+
+      alert(" Product updated successfully!");
+    } else {
+      const response = await axios.post("http://localhost:8000/product", values);
+
+
+      alert("Product added successfully!");
+    }
+
+    setIsModalOpen(false); 
+    fetchProducts()
+  } catch (error) {
+    console.error("Error saving product:", error);
+    message.error("Failed to save product.");
+  }
+};
+
+
+
+
   const handleCancel = () => {
     setIsModalOpen(false);
   };
